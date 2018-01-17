@@ -1,0 +1,5 @@
+[user]
+        name = Jeffrey Slabaugh
+        email = jeffrey.slabaugh@gmail.com
+[credential]
+        helper = cache
