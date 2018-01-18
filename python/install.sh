@@ -7,7 +7,7 @@ pyenv_install () {
     PYENV_ROOT="$HOME/.pyenv"
     PATH="$PYENV_ROOT/bin:$PATH"
     git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT
-    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+    git clone https://github.com/pyenv/pyenv-virtualenv.git "$PYENv_ROOT/plugins/pyenv-virtualenv"
 }
 
 python_compilers
