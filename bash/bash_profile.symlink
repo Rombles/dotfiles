@@ -1,6 +1,6 @@
 DOTFILES=$HOME/.dotfiles
 for fname in $(find $DOTFILES -name env.sh); do
-    . $fname
+    source $fname
 done
 
 # add bin directory to path
