@@ -7,8 +7,8 @@ These dotfiles are focused around topics. For example, everything under the `pyt
 ## Special Files and Directories
 
  * **`bin/`**: Anything in `bin/` will get added to `$PATH` and made available anywhere
- * **`<topic>/env.sh`**: Any `env.sh` files in a topic folder are sourced in your shell. This is a good place to put topic-specific environment variables, `$PATH` additions, or source other scripts.
- * **`topic/install.sh`**: Any `install.sh` files in a topic folder will be executed when running `script/install`. These scripts are used for doing any installation tasks beyond installing via Homebrew.
+ * **`<topic>/env.sh`**: Any `env.sh` files in a topic folder are sourced in your login shell. This is a good place to put topic-specific environment variables, `$PATH` additions, or source other scripts.
+ * **`topic/install.sh`**: Any `install.sh` files in a topic folder will be executed when running `script/install`. These scripts are used for doing any installation tasks beyond creating symlinks. Any time you run bootstrap these will be run.
  * **`topic/*.symlink`**: Any file or directory ending in `*.symlink` will be symlinked in `$HOME` without the `*.symlink` extension and preceded by a `.`. For example, `ssh.symlink/` will get symlinked as `$HOME/.ssh/` and `python/pypirc.symlink` will get symlinked as `$HOME/.pypirc`.
 
 ## Usage
@@ -19,5 +19,11 @@ These dotfiles are meant to be useful as is, but you will have the best experien
 git clone <repo url> ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap.sh
+```
 
-Borrowed liberally from https://github.com/holman/dotfiles.
+## Errata
+Right now, the bashrc sources the login shell `.bash_profile` which isn't ideal. I'm mulling around the idea of moving most things from `.bash_profile` into `.bashrc` but one thing at a time.
+
+
+## Credits
+The general idea of this dotfiles repo was borrowed liberally from https://github.com/holman/dotfiles.

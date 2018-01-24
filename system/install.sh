@@ -8,7 +8,7 @@ upgrade_system () {
 }
 
 user_packages () {
-    sudo apt-get install tree tmux curl -y
+    sudo apt-get install vim tree tmux curl -y
 }
 
 
